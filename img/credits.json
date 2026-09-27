@@ -17,18 +17,6 @@
   "license": "CC BY-SA 3.0 de",
   "source": "https://commons.wikimedia.org/wiki/File:Ausstellungsansicht_Hildesheim.jpg"
  },
- "minula2.jpg": {
-  "title": "ARTISTIC INTELLIGENCE 25 years of Wikipedia exhibition in Bern Ausstellungsansicht.jpg",
-  "author": "GalerieGlaab",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:ARTISTIC_INTELLIGENCE_25_years_of_Wikipedia_exhibition_in_Bern_Ausstellungsansicht.jpg"
- },
- "minula4.jpg": {
-  "title": "Christiane Peschek, Artificial Bloom .jpg",
-  "author": "Postinternetarthistorian",
-  "license": "CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Christiane_Peschek,_Artificial_Bloom_.jpg"
- },
  "navstevnice.jpg": {
   "title": "White Cube Gallery C13 at Art Basel 2025 2.jpg",
   "author": "Kalai Ramu",
@@ -46,5 +34,17 @@
   "author": "Helga Broll",
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Ausstellungsansicht_STAMPA_Basel,_Zusammenbringen_was_nicht_zusammengeh%C3%B6rt,_Monika_Dillier_1.jpg"
+ },
+ "textura-1024.jpg": {
+  "title": "Scratchy Vintage Paint texture.",
+  "author": "Mary Vican",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/26499572@N08/6285173458"
+ },
+ "papir-1024.jpg": {
+  "title": "Gallery visitors",
+  "author": "mrdannynavarro",
+  "license": "CC BY-SA 2.0",
+  "source": "https://www.flickr.com/photos/21283177@N00/1023609988"
  }
 }
