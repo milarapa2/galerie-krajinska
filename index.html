@@ -3,256 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Galerie v Krajinské ulici v Českých Budějovicích. Zastupujeme autory, kteří chtějí tvořit, ne se prodávat.">
-<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Galerie Krajinská</title>
+<meta name="description" content="Galerie v Krajinské ulici v Českých Budějovicích. Zastupujeme autory, kteří chtějí tvořit, ne se prodávat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..800&family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
 <style>
 :root{
-  --wall:#ECEEEF; --wall-2:#E2E5E7; --ink:#15171A; --muted:#626870; --line:#C8CDD1;
-  --dot:#D7261E; --paper:#F7F8F8; --shade:rgba(21,23,26,.06);
-  --display:"Anybody","Arial Narrow",system-ui,sans-serif;
-  --body:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#F7F4F0; --bg-2:#EFEAE4; --ink:#1F2440; --muted:#6D7084; --line:#E2DCD4;
+  --rose:#EAD5D1; --rose-ink:#8C5E58; --wall:#F1EEEA; --floor:#D9D3CB;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --wall:#111315; --wall-2:#181B1E; --ink:#E7E9EB; --muted:#98A0A8; --line:#2B3035;
-    --dot:#FF4B3E; --paper:#1C1F23; --shade:rgba(0,0,0,.35); color-scheme:dark;
-  }
+  :root:not([data-theme="light"]){--bg:#15161C;--bg-2:#1C1D25;--ink:#ECE8E3;--muted:#A3A2AE;--line:#2C2D37;--rose:#4A3533;--rose-ink:#E8C3BD;--wall:#22232A;--floor:#2E2E36;color-scheme:dark}
 }
-:root[data-theme="dark"]{
-  --wall:#111315; --wall-2:#181B1E; --ink:#E7E9EB; --muted:#98A0A8; --line:#2B3035;
-  --dot:#FF4B3E; --paper:#1C1F23; --shade:rgba(0,0,0,.35); color-scheme:dark;
-}
+:root[data-theme="dark"]{--bg:#15161C;--bg-2:#1C1D25;--ink:#ECE8E3;--muted:#A3A2AE;--line:#2C2D37;--rose:#4A3533;--rose-ink:#E8C3BD;--wall:#22232A;--floor:#2E2E36;color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--wall);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:clamp(16px,4vw,56px)}
-.wrap{max-width:1180px;margin-inline:auto}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--dot);outline-offset:3px}
-.draft{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);border-bottom:1px dashed var(--line);padding-block:8px;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;padding-inline:clamp(16px,4vw,56px)}
+.wrap{max-width:1200px;margin-inline:auto}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:1.5px solid var(--ink);outline-offset:4px}
+img,canvas{max-width:100%;display:block}
+
+.cap{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.more{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid currentColor;transition:gap .25s}
+.more:hover{gap:22px}
+.more svg{width:16px;height:8px}
 
 /* header */
-header.site{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px 18px}
-.mark{font-family:var(--display);font-weight:700;font-stretch:62%;font-size:26px;letter-spacing:.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.mark i{width:11px;height:11px;border-radius:50%;background:var(--dot);display:inline-block;transform:translateY(-2px)}
-nav{display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--ink)}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:26px 30px}
+.logo{width:74px;height:74px;border-radius:50%;background:var(--rose);display:grid;place-content:center;text-align:center;line-height:1;color:var(--rose-ink)}
+.logo b{font-weight:500;font-size:15px;letter-spacing:.01em}
+.logo span{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+nav{display:flex;gap:clamp(16px,3vw,40px);flex-wrap:wrap}
+nav a{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding-block:4px;border-bottom:1px solid transparent}
+nav a:hover{border-color:currentColor}
 
-/* hero: a lit wall */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px);align-items:end;padding-block:clamp(28px,6vw,72px) clamp(40px,7vw,88px);isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0 calc(-1*clamp(16px,4vw,56px));z-index:-1;
-  background:radial-gradient(520px 380px at var(--mx,68%) var(--my,40%),color-mix(in srgb,var(--paper) 92%,transparent),transparent 70%),var(--wall);
-  transition:background-position .2s}
-h1{font-family:var(--display);font-weight:760;font-stretch:58%;font-size:clamp(52px,9vw,128px);line-height:.86;letter-spacing:-.01em;margin:0 0 22px;text-wrap:balance}
-h1 span{display:block;font-weight:300;font-stretch:120%;font-size:.34em;letter-spacing:.02em;line-height:1.2;margin-top:14px;color:var(--muted)}
-.lede{max-width:34ch;font-size:19px;margin:0 0 26px}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);padding:11px 18px;border-radius:2px}
-.btn:hover{background:var(--ink);color:var(--wall)}
-.hero-art{display:grid;gap:12px}
-.frame{background:var(--paper);padding:clamp(10px,1.6vw,18px);box-shadow:0 18px 40px -22px var(--shade),0 2px 0 var(--shade)}
-.frame canvas{display:block;width:100%;height:auto;aspect-ratio:4/3}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,56px);align-items:center;padding-bottom:clamp(40px,6vw,72px);border-bottom:1px solid var(--line)}
+.who h1{font-weight:300;font-size:clamp(34px,4.2vw,52px);line-height:1.08;margin:18px 0 6px;letter-spacing:-.01em}
+.who .title{font-style:italic;font-size:clamp(20px,2.2vw,26px);margin:0 0 14px}
+.who .dates{font-size:15px;margin:0 0 clamp(28px,5vw,56px);font-variant-numeric:tabular-nums}
 
-/* museum wall label */
-.label{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--muted);max-width:44ch}
-.label b{font-family:var(--body);font-size:15px;color:var(--ink);font-weight:600;display:block}
-.label em{font-family:var(--body);font-style:italic;color:var(--ink)}
+/* installation view: a painting on a lit wall */
+.room{position:relative;aspect-ratio:16/10;background:linear-gradient(180deg,var(--wall) 0 84%,var(--floor) 84%);overflow:hidden}
+.room::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 30%,rgba(255,255,255,.35),transparent 70%);pointer-events:none;mix-blend-mode:soft-light}
+.room .work{position:absolute;left:17%;right:17%;top:12%;display:grid;grid-template-columns:1fr 1fr;gap:1.2%;box-shadow:0 26px 30px -24px rgba(40,30,20,.45)}
+.room canvas{width:100%;height:auto;aspect-ratio:3/4}
+.room .bench{position:absolute;left:36%;right:36%;bottom:7%;height:3.5%;background:color-mix(in srgb,var(--ink) 70%,transparent);border-radius:1px}
+.room .bench::before,.room .bench::after{content:"";position:absolute;bottom:-160%;width:4%;height:160%;background:inherit}
+.room .bench::before{left:6%}.room .bench::after{right:6%}
 
-section{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-h2{font-family:var(--display);font-weight:700;font-stretch:66%;font-size:clamp(36px,5vw,64px);line-height:.95;margin:0 0 18px;text-wrap:balance}
-.intro{max-width:60ch;color:var(--ink);margin:0}
+section{padding-block:clamp(44px,6vw,80px);border-bottom:1px solid var(--line)}
+.current{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,3fr);gap:clamp(24px,4vw,56px);align-items:start}
+.current h2{font-weight:300;font-size:clamp(26px,2.8vw,34px);line-height:1.15;margin:16px 0 4px}
+.current .title{font-style:italic;font-size:20px;margin:0 0 10px}
+.current p.txt{margin:30px 0 26px;max-width:38ch}
+.current .piece canvas{aspect-ratio:4/5;width:100%;height:auto;box-shadow:0 18px 26px -20px rgba(40,30,20,.35)}
 
-/* artists: hung at different heights like a salon wall */
-.wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3.5vw,48px);margin-top:44px;align-items:start}
-.work{display:grid;gap:14px}
-.work:nth-child(2){margin-top:64px}
-.work:nth-child(3){margin-top:24px}
-.work .frame{position:relative;transition:transform .35s ease}
-.work:hover .frame{transform:translateY(-4px)}
-.work canvas{aspect-ratio:var(--ar,3/4)}
-.sold{position:absolute;right:-7px;bottom:-7px;width:14px;height:14px;border-radius:50%;background:var(--dot);box-shadow:0 0 0 3px var(--wall)}
-.work .who{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.work .who a{font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
-.work .who a:hover{color:var(--ink)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,28px);margin-top:26px}
+.card .img{aspect-ratio:4/3;overflow:hidden;background:var(--bg-2)}
+.card .img > *{width:100%;height:100%;transition:transform .6s ease}
+.card:hover .img > *{transform:scale(1.035)}
+.card h3{font-weight:400;font-size:17px;margin:16px 0 0}
+.card .t{font-style:italic;font-size:14px;margin:0}
+.card .y{font-size:13px;color:var(--muted);margin:0 0 16px;font-variant-numeric:tabular-nums}
+.card .scene{position:relative;background:linear-gradient(180deg,var(--wall) 0 80%,var(--floor) 80%)}
+.card .scene canvas{position:absolute;left:30%;top:14%;width:40%;height:auto;aspect-ratio:3/4;box-shadow:0 14px 16px -12px rgba(40,30,20,.4)}
 
-/* how it works: a real sequence */
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border-top:1px solid var(--ink)}
-.steps li{list-style:none;padding:18px 20px 8px 0;border-right:1px solid var(--line)}
-.steps li:last-child{border-right:0}
-.steps li+li{padding-left:20px}
-.steps .n{font-family:var(--mono);font-size:12px;color:var(--dot)}
-.steps h3{font-family:var(--display);font-stretch:80%;font-weight:650;font-size:22px;margin:8px 0 6px}
-.steps p{margin:0;color:var(--muted);font-size:15.5px}
-ol.steps{padding:0}
+.artists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:26px}
+.artist canvas{aspect-ratio:1/1;width:100%;height:auto}
+.artist h3{font-weight:400;font-size:20px;margin:16px 0 2px}
+.artist p{margin:0 0 16px;color:var(--muted);font-size:15px}
 
-/* visit */
-.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px)}
-.plan{background:var(--paper);padding:18px;border:1px solid var(--line)}
-.plan svg{display:block;width:100%;height:auto}
-.plan text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
-.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:22px 0 0;font-size:16px}
-.facts dt{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px)}
+.split h2{font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1.15;margin:16px 0 18px}
+.split p{max-width:52ch;margin:0 0 16px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;margin:6px 0 0}
+.facts dt{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:4px}
 .facts dd{margin:0}
 .tbd{color:var(--muted);font-style:italic}
+.note{font-size:12px;color:var(--muted);letter-spacing:.04em}
 
-footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+footer{display:grid;grid-template-columns:auto 1fr 1fr auto;gap:24px;align-items:center;padding-block:34px 44px;font-size:13px;color:var(--muted)}
+footer .logo{width:52px;height:52px}
+footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
 
-@media (max-width:860px){
-  .hero,.visit{grid-template-columns:1fr}
-  .wall{grid-template-columns:1fr 1fr}
-  .work:nth-child(n){margin-top:0}
-  .steps{grid-template-columns:1fr 1fr}
-  .steps li:nth-child(2){border-right:0}
-  .steps li:nth-child(3){padding-left:0}
+@media (max-width:900px){
+  .hero,.current,.split{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .artists{grid-template-columns:1fr 1fr}
+  footer{grid-template-columns:auto 1fr}
 }
 @media (max-width:520px){
-  .wall,.steps{grid-template-columns:1fr}
-  .steps li{border-right:0;padding-left:0!important;border-bottom:1px solid var(--line)}
+  .artists{grid-template-columns:1fr}
+  header{justify-content:center}
+  nav{justify-content:center;gap:16px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
-  <div class="draft"><span>NÁVRH v1 · pracovní název, jména a fotky jsou zástupné</span><span>Krajinská · České Budějovice</span></div>
-
-  <header class="site">
-    <a class="mark" href="#top" aria-label="Galerie Krajinská, úvod"><i aria-hidden="true"></i>Galerie Krajinská</a>
-    <nav aria-label="Hlavní">
+  <header>
+    <a class="logo" href="#top" aria-label="Galerie Krajinská – úvod"><b>krajinská</b><span>galerie</span></a>
+    <nav aria-label="Hlavní menu">
+      <a href="#vystavy">Výstavy</a>
       <a href="#umelci">Umělci</a>
-      <a href="#jak">Pro umělce</a>
+      <a href="#o-galerii">O galerii</a>
       <a href="#navsteva">Návštěva</a>
     </nav>
   </header>
 
   <main id="top">
-    <div class="hero" id="hero">
-      <div>
-        <h1>Umění, které<br>nemusí křičet.<span>Zastupujeme autory, kteří chtějí tvořit, ne se prodávat.</span></h1>
-        <p class="lede">Malá galerie kousek od náměstí Přemysla Otakara II. Vystavujeme, fotografujeme a prodáváme díla autorů, kteří o propagaci nestojí.</p>
-        <a class="btn" href="#umelci">Poznat autory <span aria-hidden="true">→</span></a>
+    <div class="hero">
+      <div class="who">
+        <p class="cap">Aktuální výstava</p>
+        <h1>[Jméno autorky]</h1>
+        <p class="title">Tiché ozvěny</p>
+        <p class="dates">12. 10. – 20. 12. 2026</p>
+        <a class="more" href="#vystavy">Zobrazit výstavu <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a>
       </div>
-      <figure class="hero-art" style="margin:0">
-        <div class="frame"><canvas id="art-hero" width="1200" height="900" aria-label="Ilustrační abstraktní dílo"></canvas></div>
-        <figcaption class="label"><b>Zástupné dílo</b><em>Krajinou, ráno</em>, 2026 · akryl na plátně · 120 × 90 cm<br>ilustrace pro návrh webu</figcaption>
-      </figure>
+      <div class="room" role="img" aria-label="Ilustrační pohled do výstavy: dvojice abstraktních pláten na stěně galerie">
+        <div class="work"><canvas id="h1" width="600" height="800"></canvas><canvas id="h2" width="600" height="800"></canvas></div>
+        <div class="bench"></div>
+      </div>
     </div>
 
-    <section id="umelci">
-      <p class="eyebrow">Zastupovaní autoři</p>
-      <h2>Tři autoři, tři rukopisy</h2>
-      <p class="intro">Každého autora zastupujeme na základě smlouvy. Postaráme se o výstavy, fotografie děl, texty i prodej. Autor se věnuje práci v ateliéru.</p>
+    <section id="vystavy" class="current" aria-labelledby="cur-h">
+      <div>
+        <p class="cap">Aktuální výstava</p>
+        <h2 id="cur-h">[Jméno autorky]</h2>
+        <p class="title">Tiché ozvěny</p>
+        <p class="dates">12. 10. – 20. 12. 2026</p>
+      </div>
+      <div>
+        <p class="txt">Výstava Tiché ozvěny sleduje stopy paměti v tlumených materiálech a drobných gestech. Nová díla se dívají do prostorů mezi věcmi, kde se ticho mění ve tvar.</p>
+        <a class="more" href="#o-galerii">O výstavě <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a>
+      </div>
+      <div class="piece"><canvas id="c1" width="640" height="800" aria-label="Ilustrační dílo z výstavy"></canvas></div>
+    </section>
 
-      <div class="wall">
-        <article class="work">
-          <div class="frame"><canvas id="art-1" width="600" height="800" style="--ar:3/4" aria-label="Ilustrační dílo autora 1"></canvas></div>
-          <div class="who"><div class="label"><b>[Jméno autora 1]</b><em>Pole po dešti</em>, 2025 · olej na plátně · 60 × 80 cm</div><a href="#umelci">Profil →</a></div>
-        </article>
-        <article class="work">
-          <div class="frame"><canvas id="art-2" width="600" height="600" style="--ar:1/1" aria-label="Ilustrační dílo autorky 2"></canvas><span class="sold" title="Prodáno" aria-label="Prodáno"></span></div>
-          <div class="who"><div class="label"><b>[Jméno autorky 2]</b><em>Linie řeky</em>, 2026 · tuš na papíře · 50 × 50 cm · prodáno</div><a href="#umelci">Profil →</a></div>
-        </article>
-        <article class="work">
-          <div class="frame"><canvas id="art-3" width="600" height="750" style="--ar:4/5" aria-label="Ilustrační dílo autora 3"></canvas></div>
-          <div class="who"><div class="label"><b>[Jméno autora 3]</b><em>Síť</em>, 2024 · tempera na desce · 40 × 50 cm</div><a href="#umelci">Profil →</a></div>
-        </article>
+    <section aria-labelledby="next-h">
+      <p class="cap" id="next-h">Připravujeme</p>
+      <div class="grid4">
+        <article class="card"><div class="img"><div class="scene"><canvas id="p1" width="300" height="400"></canvas></div></div><h3>[Autor 1]</h3><p class="t">Pole po dešti</p><p class="y">leden 2027</p><a class="more" href="#umelci">Více <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+        <article class="card"><div class="img"><canvas id="p2" width="600" height="450"></canvas></div><h3>Návštěva ateliéru</h3><p class="t">[Autor 2]</p><p class="y">únor 2027</p><a class="more" href="#umelci">Více <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+        <article class="card"><div class="img"><canvas id="p3" width="600" height="450"></canvas></div><h3>Práce na papíře</h3><p class="t">kolektivní výstava</p><p class="y">březen 2027</p><a class="more" href="#umelci">Více <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+        <article class="card"><div class="img"><div class="scene"><canvas id="p4" width="300" height="400"></canvas></div></div><h3>[Autor 3]</h3><p class="t">Textura a paměť</p><p class="y">duben 2027</p><a class="more" href="#umelci">Více <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
       </div>
     </section>
 
-    <section id="jak">
-      <p class="eyebrow">Pro umělce</p>
-      <h2>Vy tvoříte. Zbytek zařídíme.</h2>
-      <p class="intro">Hledáme autory, kteří mají co ukázat, ale nechtějí trávit čas propagací, sociálními sítěmi a jednáním s kupci.</p>
-      <ol class="steps">
-        <li><span class="n">1</span><h3>Seznámení</h3><p>Podíváme se na vaši práci, v ateliéru nebo u nás.</p></li>
-        <li><span class="n">2</span><h3>Smlouva</h3><p>Jasné podmínky zastupování a provize, bez skrytých poplatků.</p></li>
-        <li><span class="n">3</span><h3>Prezentace</h3><p>Profesionální fotografie, texty, výstava v galerii a online.</p></li>
-        <li><span class="n">4</span><h3>Prodej</h3><p>Jednáme s kupci a sběrateli. Vám posíláme vyúčtování.</p></li>
-      </ol>
+    <section id="umelci" aria-labelledby="art-h">
+      <p class="cap" id="art-h">Zastupovaní autoři</p>
+      <div class="artists">
+        <article class="artist"><canvas id="a1" width="600" height="600" aria-label="Ilustrační dílo"></canvas><h3>[Jméno autora 1]</h3><p>malba · olej, akryl</p><a class="more" href="#umelci">Profil autora <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+        <article class="artist"><canvas id="a2" width="600" height="600" aria-label="Ilustrační dílo"></canvas><h3>[Jméno autorky 2]</h3><p>kresba · tuš na papíře</p><a class="more" href="#umelci">Profil autorky <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+        <article class="artist"><canvas id="a3" width="600" height="600" aria-label="Ilustrační dílo"></canvas><h3>[Jméno autora 3]</h3><p>malba · tempera na desce</p><a class="more" href="#umelci">Profil autora <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a></article>
+      </div>
     </section>
 
-    <section id="navsteva">
-      <div class="visit">
-        <div>
-          <p class="eyebrow">Návštěva</p>
-          <h2>Pár kroků od náměstí</h2>
-          <dl class="facts">
-            <dt>Adresa</dt><dd>Krajinská <span class="tbd">[č. p.]</span>, 370 01 České Budějovice</dd>
-            <dt>Otevřeno</dt><dd class="tbd">doplníme</dd>
-            <dt>Kontakt</dt><dd class="tbd">e-mail a telefon doplníme</dd>
-            <dt>Vstup</dt><dd>zdarma</dd>
-          </dl>
-        </div>
-        <div class="plan" aria-label="Orientační plánek">
-          <svg viewBox="0 0 400 300" role="img" aria-label="Plánek: galerie v ulici Krajinská u náměstí Přemysla Otakara II.">
-            <rect x="0" y="0" width="400" height="300" fill="none"/>
-            <rect x="150" y="95" width="120" height="120" fill="none" stroke="currentColor" stroke-opacity=".35"/>
-            <circle cx="210" cy="155" r="4" fill="currentColor" fill-opacity=".35"/>
-            <text x="160" y="232">nám. Přemysla Otakara II.</text>
-            <path d="M270 150 H400" stroke="currentColor" stroke-width="10" stroke-opacity=".12" fill="none"/>
-            <text x="300" y="138">Krajinská</text>
-            <circle cx="336" cy="150" r="8" style="fill:var(--dot)"/>
-            <text x="316" y="178">galerie</text>
-            <path d="M210 0 V95 M210 215 V300 M0 155 H150" stroke="currentColor" stroke-width="6" stroke-opacity=".08" fill="none"/>
-            <text x="12" y="290">orientační, bez měřítka</text>
-          </svg>
-        </div>
+    <section id="o-galerii" class="split" aria-labelledby="about-h">
+      <div>
+        <p class="cap">O galerii</p>
+        <h2 id="about-h">Zastupujeme autory, kteří chtějí tvořit, ne se prodávat.</h2>
       </div>
+      <div>
+        <p>Galerie Krajinská pracuje s výtvarníky, kteří mají co ukázat, ale nechtějí trávit čas propagací, sociálními sítěmi a jednáním s kupci. Na základě smlouvy za ně připravujeme výstavy, fotografie a texty a jednáme se sběrateli.</p>
+        <p>Jste autor a hledáte zastoupení? Napište nám a pošlete ukázky své práce.</p>
+      </div>
+    </section>
+
+    <section id="navsteva" class="split" aria-labelledby="visit-h">
+      <div>
+        <p class="cap">Návštěva</p>
+        <h2 id="visit-h">Pár kroků od náměstí Přemysla Otakara II.</h2>
+      </div>
+      <dl class="facts">
+        <dt>Adresa</dt><dd>Krajinská <span class="tbd">[č. p.]</span><br>370 01 České Budějovice</dd>
+        <dt>Otevřeno</dt><dd class="tbd">doplníme</dd>
+        <dt>Kontakt</dt><dd class="tbd">e-mail a telefon doplníme</dd>
+        <dt>Vstup</dt><dd>zdarma</dd>
+      </dl>
     </section>
   </main>
 
   <footer>
-    <span>Galerie Krajinská · České Budějovice</span>
-    <span>Návrh webu · 2026</span>
+    <a class="logo" href="#top" aria-label="Nahoru"><b>krajinská</b><span>galerie</span></a>
+    <span>Galerie Krajinská · Krajinská, České Budějovice</span>
+    <span class="tbd">info@… (doplníme)</span>
+    <span class="note">Návrh v2 · jména a díla jsou zástupná</span>
   </footer>
 </div>
 
 <script>
 (function(){
-  // spotlight follows the pointer across the hero wall, like a gallery light
-  const hero=document.getElementById('hero');
-  const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!calm&&hero){hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();
-    hero.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');hero.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});}
-
-  // seeded placeholder artworks (drawn once, not animated)
   function rng(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-  function fields(id,seed,pal){const c=document.getElementById(id),g=c.getContext('2d'),r=rng(seed),W=c.width,H=c.height;
-    g.fillStyle=pal[0];g.fillRect(0,0,W,H);
-    let y=H*.06;const bands=3+Math.floor(r()*2);
-    for(let i=0;i<bands;i++){const h=(H*.88/bands)*(0.8+r()*.4);g.fillStyle=pal[1+i%(pal.length-1)];
-      g.globalAlpha=.9;g.beginPath();const x0=W*.07,x1=W*.93;g.moveTo(x0+r()*8,y);
-      for(let x=x0;x<=x1;x+=W/40)g.lineTo(x,y+Math.sin(x*.01+i)*3+r()*4);
-      for(let x=x1;x>=x0;x-=W/40)g.lineTo(x,y+h-8+r()*5);g.closePath();g.fill();y+=h*.98;}
-    g.globalAlpha=.06;for(let i=0;i<4000;i++){g.fillStyle=r()>.5?'#000':'#fff';g.fillRect(r()*W,r()*H,1.2,1.2);}g.globalAlpha=1;}
-  function lines(id,seed,bg,ink){const c=document.getElementById(id),g=c.getContext('2d'),r=rng(seed),W=c.width,H=c.height;
+  const get=id=>{const c=document.getElementById(id);return c&&[c,c.getContext('2d'),c.width,c.height]};
+  // soft layered texture with faint marks (pale mixed media, like the reference)
+  function texture(id,seed,base,stains,mark){const q=get(id);if(!q)return;const[c,g,W,H]=q,r=rng(seed);
+    g.fillStyle=base;g.fillRect(0,0,W,H);
+    for(let i=0;i<70;i++){const x=r()*W,y=r()*H,rad=(0.05+r()*0.22)*Math.max(W,H);const gr=g.createRadialGradient(x,y,0,x,y,rad);
+      const col=stains[Math.floor(r()*stains.length)];gr.addColorStop(0,col+'55');gr.addColorStop(1,col+'00');g.fillStyle=gr;g.fillRect(0,0,W,H);}
+    g.strokeStyle=mark;g.lineCap='round';
+    for(let k=0;k<7;k++){g.globalAlpha=.25+r()*.4;g.lineWidth=.8+r()*1.6;g.beginPath();let x=r()*W,y=r()*H;g.moveTo(x,y);
+      for(let s=0;s<40;s++){x+=(r()-.5)*W*.07;y+=(r()-.5)*H*.07;g.lineTo(x,y);}g.stroke();}
+    g.globalAlpha=.07;for(let i=0;i<W*H/60;i++){g.fillStyle=r()>.5?'#000':'#fff';g.fillRect(r()*W,r()*H,1.2,1.2);}g.globalAlpha=1;}
+  // loose looping scribble on a warm ground
+  function scribble(id,seed,base,cols){const q=get(id);if(!q)return;const[c,g,W,H]=q,r=rng(seed);
+    const gr=g.createLinearGradient(0,0,W,H);gr.addColorStop(0,base[0]);gr.addColorStop(1,base[1]);g.fillStyle=gr;g.fillRect(0,0,W,H);
+    g.lineCap='round';for(let k=0;k<5;k++){g.strokeStyle=cols[k%cols.length];g.globalAlpha=.35;g.lineWidth=1+r()*2;g.beginPath();
+      let a=r()*6,x=W*(.3+r()*.4),y=H*(.3+r()*.4);g.moveTo(x,y);for(let s=0;s<260;s++){a+=(r()-.5)*.9;x+=Math.cos(a)*6;y+=Math.sin(a)*6;
+      x=Math.min(W*.92,Math.max(W*.08,x));y=Math.min(H*.92,Math.max(H*.08,y));g.lineTo(x,y);}g.stroke();}g.globalAlpha=1;}
+  // horizontal ink lines
+  function lines(id,seed,bg,ink){const q=get(id);if(!q)return;const[c,g,W,H]=q,r=rng(seed);
     g.fillStyle=bg;g.fillRect(0,0,W,H);g.strokeStyle=ink;g.lineCap='round';
-    for(let k=0;k<46;k++){g.globalAlpha=.25+r()*.6;g.lineWidth=.6+r()*1.8;g.beginPath();let y=H*.15+k*H*.016;
-      g.moveTo(W*.08,y);for(let x=W*.08;x<W*.92;x+=6){y+=Math.sin(x*.012+k*.3)*1.1+(r()-.5)*1.4;g.lineTo(x,y);}g.stroke();}g.globalAlpha=1;}
-  function grid(id,seed,pal){const c=document.getElementById(id),g=c.getContext('2d'),r=rng(seed),W=c.width,H=c.height;
-    g.fillStyle=pal[0];g.fillRect(0,0,W,H);const n=6,m=7,cw=W*.84/n,ch=H*.84/m;
-    for(let i=0;i<n;i++)for(let j=0;j<m;j++){const x=W*.08+i*cw,y=H*.08+j*ch;if(r()<.62){g.fillStyle=pal[1+Math.floor(r()*(pal.length-1))];
-      const p=cw*.12;g.fillRect(x+p+r()*3,y+p+r()*3,cw-2*p,ch-2*p);}}
-    g.strokeStyle='rgba(0,0,0,.18)';g.lineWidth=1;for(let i=0;i<=n;i++){g.beginPath();g.moveTo(W*.08+i*cw,H*.08);g.lineTo(W*.08+i*cw,H*.92);g.stroke();}}
-  function morning(id,seed){const c=document.getElementById(id),g=c.getContext('2d'),r=rng(seed),W=c.width,H=c.height;
-    const sky=g.createLinearGradient(0,0,0,H*.62);sky.addColorStop(0,'#cfd6d3');sky.addColorStop(1,'#e8dcc6');g.fillStyle=sky;g.fillRect(0,0,W,H);
-    g.fillStyle='#e0894f';g.globalAlpha=.9;g.beginPath();g.arc(W*.68,H*.44,H*.16,0,Math.PI*2);g.fill();g.globalAlpha=1;
-    const hills=['#8f9e8e','#6f7f73','#4b5a53','#2f3b37'];
-    hills.forEach((col,i)=>{g.fillStyle=col;g.beginPath();let y=H*(.52+i*.1);g.moveTo(0,H);g.lineTo(0,y);
-      for(let x=0;x<=W;x+=W/60){y+=(r()-.5)*H*.012+Math.sin(x*.004+i*2)*H*.004;g.lineTo(x,y);}g.lineTo(W,H);g.closePath();g.fill();});
-    g.globalAlpha=.05;for(let i=0;i<5000;i++){g.fillStyle=r()>.5?'#000':'#fff';g.fillRect(r()*W,r()*H,1.3,1.3);}g.globalAlpha=1;}
-  morning('art-hero',7);
-  fields('art-1',21,['#e4ddcf','#8aa0a3','#c9b98e','#43565c']);
-  lines('art-2',5,'#f3f1ea','#1d2327');
-  grid('art-3',13,['#ebe7de','#1f3a5f','#c9a227','#b33a2e','#dcd6c8']);
+    for(let k=0;k<38;k++){g.globalAlpha=.2+r()*.55;g.lineWidth=.6+r()*1.4;g.beginPath();let y=H*.14+k*H*.019;
+      g.moveTo(W*.08,y);for(let x=W*.08;x<W*.92;x+=6){y+=Math.sin(x*.012+k*.3)*1.1+(r()-.5)*1.3;g.lineTo(x,y);}g.stroke();}g.globalAlpha=1;}
+  // quiet colour fields
+  function fields(id,seed,pal){const q=get(id);if(!q)return;const[c,g,W,H]=q,r=rng(seed);
+    g.fillStyle=pal[0];g.fillRect(0,0,W,H);let y=H*.08;const n=3;
+    for(let i=0;i<n;i++){const h=H*.84/n;g.fillStyle=pal[1+i%(pal.length-1)];g.globalAlpha=.85;g.beginPath();g.moveTo(W*.08,y+r()*4);
+      for(let x=W*.08;x<=W*.92;x+=W/30)g.lineTo(x,y+(r()-.5)*5);for(let x=W*.92;x>=W*.08;x-=W/30)g.lineTo(x,y+h-6+(r()-.5)*5);g.closePath();g.fill();y+=h;}g.globalAlpha=1;}
+
+  const bone='#E7E1D6', stonePal=['#D8D0C2','#BFB6A6','#A9A7A0','#CFC6B8','#8E8A84'];
+  texture('h1',3,bone,stonePal,'#5d5a57');texture('h2',4,bone,stonePal,'#5d5a57');
+  scribble('c1',9,['#D98E86','#E7B8A6'],['#F2D3C8','#A94F4A','#C77466']);
+  texture('p1',11,bone,stonePal,'#6b6560');
+  lines('p2',5,'#EFEAE2','#2B2F3A');
+  scribble('p3',17,['#F0C9B3','#9FB3CF'],['#F7E5D8','#5E7BA6','#E39B7B']);
+  texture('p4',21,'#E3DDD2',['#C9C3B5','#B8B4A5','#D6CFC0','#9E9A8E'],'#77705f');
+  fields('a1',31,['#EAE3D7','#8FA3A4','#CDBB8F','#45575D']);
+  lines('a2',33,'#F3F0E8','#1D2327');
+  texture('a3',35,'#E9DCD3',['#D7A9A0','#C9B7A8','#E6C9BC','#A98F86'],'#6a4f49');
 })();
 </script>
-
 </body>
 </html>
