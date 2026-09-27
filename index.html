@@ -7,7 +7,8 @@
 <meta name="description" content="Galerie v Krajinské ulici v Českých Budějovicích. Zastupujeme autory, kteří chtějí tvořit, ne se prodávat.">
 <meta property="og:title" content="Galerie Krajinská">
 <meta property="og:description" content="Galerie v Krajinské ulici v Českých Budějovicích. Výstavy a zastoupení autorů, kteří chtějí tvořit, ne se prodávat.">
-<meta property="og:image" content="https://milarapa2.github.io/galerie-krajinska/img/hero.jpg">
+<meta property="og:image" content="https://milarapa2.github.io/galerie-krajinska/img/hero-1600.jpg">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F7F4F0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23EAD5D1'/%3E%3Ctext x='16' y='21' font-family='sans-serif' font-size='14' text-anchor='middle' fill='%2380514B'%3Ek%3C/text%3E%3C/svg%3E">
@@ -32,6 +33,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:1.5px solid var(--ink);outline-offset:4px}
 img{max-width:100%;display:block}
+.skip{position:absolute;left:16px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 14px;font-size:13px;z-index:9}
+.skip:focus{top:12px}
+main:focus{outline:none}
 h2.cap,.current h2.cap{margin:0;font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.65}
 
 .cap{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
@@ -68,7 +72,7 @@ section{padding-block:clamp(44px,6vw,80px);border-bottom:1px solid var(--line)}
 .current h2{font-weight:300;font-size:clamp(26px,2.8vw,34px);line-height:1.15;margin:16px 0 4px}
 .current .title{font-style:italic;font-size:20px;margin:0 0 10px}
 .current p.txt{margin:30px 0 26px;max-width:38ch}
-.current .piece .ph{aspect-ratio:4/5}
+.current .piece .ph{aspect-ratio:10/7}
 
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,28px);margin-top:26px}
 .card .ph{aspect-ratio:4/3}
@@ -99,13 +103,15 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
   .hero,.current,.split{grid-template-columns:1fr}
   .grid4{grid-template-columns:1fr 1fr}
   .artists{grid-template-columns:1fr 1fr}
-  .hero .ph{order:-1}
   .hero{gap:28px}
+  .who .dates{margin-bottom:24px}
   footer{grid-template-columns:auto 1fr}
 }
 @media (max-width:560px){
-  .artists,.grid4{grid-template-columns:1fr}
-  .grid4{gap:36px}
+  .artists{grid-template-columns:1fr}
+  .artist .ph{aspect-ratio:3/2}
+  .grid4{grid-template-columns:1fr 1fr;gap:24px 14px}
+  .card h3{font-size:15px}
   header{justify-content:center}
   nav{justify-content:center;gap:16px}
 }
@@ -116,6 +122,7 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Přejít na obsah</a>
 <div class="wrap">
   <header>
     <a class="logo" href="#top" aria-label="Galerie Krajinská – úvod"><b>krajinská</b><span>galerie</span></a>
@@ -127,7 +134,7 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
     </nav>
   </header>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
     <div class="hero">
       <div class="who">
         <p class="cap">Aktuální výstava</p>
@@ -136,7 +143,7 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
         <p class="dates">12. 10. – 20. 12. 2026</p>
         <a class="more" href="#vystavy">O výstavě <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a>
       </div>
-      <div class="ph"><img src="img/hero.jpg" alt="Bílý výstavní sál se světlíkem a velkoformátovými abstraktními obrazy" width="1800" height="1201" fetchpriority="high" decoding="async"></div>
+      <div class="ph"><img src="img/hero-960.jpg" srcset="img/hero-960.jpg 960w, img/hero-1600.jpg 1600w" sizes="(max-width:900px) 100vw, 64vw" alt="Bílý výstavní sál se světlíkem a velkoformátovými abstraktními obrazy" width="960" height="641" fetchpriority="high" decoding="async"></div>
     </div>
 
     <section id="vystavy" class="current" aria-labelledby="cur-h">
@@ -149,25 +156,25 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
         <p class="txt">Marta Kolářová maluje krajinu, kterou si pamatuje, ne tu, kterou vidí. Velká plátna v tlumených barvách vznikla za poslední dva roky v jejím ateliéru na Šumavě. Tiché ozvěny jsou její první samostatnou výstavou v Budějovicích.</p>
         <a class="more" href="#navsteva">Jak k nám <svg viewBox="0 0 16 8" aria-hidden="true"><path d="M0 4h15M11 1l4 3-4 3" fill="none" stroke="currentColor"/></svg></a>
       </div>
-      <div class="piece"><div class="ph"><img src="img/vystava.jpg" alt="Dva obrazy s motivy květin v bílém galerijním prostoru" width="1800" height="1260" loading="lazy" decoding="async"></div></div>
+      <div class="piece"><div class="ph"><img src="img/vystava-960.jpg" srcset="img/vystava-960.jpg 960w, img/vystava-1600.jpg 1600w" sizes="(max-width:900px) 100vw, 30vw" alt="Dva obrazy s motivy květin v bílém galerijním prostoru" width="960" height="672" loading="lazy" decoding="async"></div></div>
     </section>
 
     <section aria-labelledby="past-h">
       <h2 class="cap" id="past-h">Proběhlé výstavy</h2>
       <div class="grid4">
-        <article class="card reveal"><div class="ph"><img src="img/minula1.jpg" alt="Černobílé fotografie na bílých stěnách galerie" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p class="t">Světlo na zdi</p><p class="y">jaro 2026</p></article>
-        <article class="card reveal"><div class="ph"><img src="img/minula2.jpg" alt="Menší obrazy a kresby na bílé stěně" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>kolektivní výstava</h3><p class="t">Práce na papíře</p><p class="y">zima 2025</p></article>
-        <article class="card reveal"><div class="ph"><img src="img/minula3.jpg" alt="Objekty a koláže na stěnách galerie" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Eva Šímová</h3><p class="t">Co k sobě nepatří</p><p class="y">podzim 2025</p></article>
-        <article class="card reveal"><div class="ph"><img src="img/minula4.jpg" alt="Instalace s tmavým objektem v bílém sále" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Tomáš Vlk</h3><p class="t">Umělý květ</p><p class="y">léto 2025</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/minula1-960.jpg" alt="Černobílé fotografie na bílých stěnách galerie" width="960" height="640" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p class="t">Světlo na zdi</p><p class="y">jaro 2026</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/minula2-960.jpg" alt="Menší obrazy a kresby na bílé stěně" width="960" height="1265" loading="lazy" decoding="async"></div><h3>kolektivní výstava</h3><p class="t">Práce na papíře</p><p class="y">zima 2025</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/minula3-960.jpg" alt="Objekty a koláže na stěnách galerie" width="960" height="635" loading="lazy" decoding="async"></div><h3>Eva Šímová</h3><p class="t">Co k sobě nepatří</p><p class="y">podzim 2025</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/minula4-960.jpg" alt="Instalace s tmavým objektem v bílém sále" width="960" height="641" loading="lazy" decoding="async"></div><h3>Tomáš Vlk</h3><p class="t">Umělý květ</p><p class="y">léto 2025</p></article>
       </div>
     </section>
 
     <section id="umelci" aria-labelledby="art-h">
       <h2 class="cap" id="art-h">Zastupovaní autoři</h2>
       <div class="artists">
-        <article class="artist reveal"><div class="ph"><img src="img/studio.jpg" alt="Malířka při práci v ateliéru" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Marta Kolářová</h3><p>malba · olej na plátně</p></article>
-        <article class="artist reveal"><div class="ph"><img src="img/navstevnice.jpg" alt="Návštěvnice mezi obrazy a kovovou plastikou" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Eva Šímová</h3><p>objekt · koláž</p></article>
-        <article class="artist reveal"><div class="ph"><img src="img/minula1.jpg" alt="Fotografie vystavené v galerii" width="1800" height="1200" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p>fotografie · stříbrná želatina</p></article>
+        <article class="artist reveal"><div class="ph"><img src="img/studio-960.jpg" alt="Malířka při práci v ateliéru" width="960" height="604" loading="lazy" decoding="async"></div><h3>Marta Kolářová</h3><p>malba · olej na plátně</p></article>
+        <article class="artist reveal"><div class="ph"><img src="img/navstevnice-960.jpg" alt="Návštěvnice mezi obrazy a kovovou plastikou" width="960" height="640" loading="lazy" decoding="async"></div><h3>Eva Šímová</h3><p>objekt · koláž</p></article>
+        <article class="artist reveal"><div class="ph"><img src="img/minula1-960.jpg" alt="Fotografie vystavené v galerii" width="960" height="640" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p>fotografie · stříbrná želatina</p></article>
       </div>
     </section>
 
@@ -200,7 +207,7 @@ footer .logo b{font-size:11px}footer .logo span{font-size:6.5px}
     <a class="logo" href="#top" aria-label="Nahoru"><b>krajinská</b><span>galerie</span></a>
     <span>Galerie Krajinská · Krajinská, České Budějovice</span>
     <span>Vstup zdarma</span>
-    <span class="note">Návrh v3</span>
+    <span class="note">Návrh v4</span>
   </footer>
   <details class="credits">
     <summary>Pracovní verze · jména, texty a fotografie jsou zástupné</summary>
