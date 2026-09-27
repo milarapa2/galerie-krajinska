@@ -10,21 +10,22 @@
 <meta property="og:description" content="Galerie v Krajinské ulici v Českých Budějovicích.">
 <meta property="og:image" content="https://milarapa2.github.io/galerie-krajinska/img/hero-1600.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#F8F5F1">
+<meta name="theme-color" content="#F7F5F0">
 <link rel="icon" type="image/png" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <style>
 :root{
-  --bg:#F8F5F1; --bg-2:#EFE9E2; --ink:#1E2345; --muted:#686B80; --line:#E4DED6;
+  --bg:#F7F5F0; --bg-2:#EFE9E2; --ink:#1E2345; --muted:#686B80; --line:#E4DED6;
   --g:clamp(18px,4vw,56px); --max:1240px;
   --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.7;padding-inline:var(--g);overflow-x:clip;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.shell{container-type:inline-size;padding-inline:var(--g);overflow-x:clip}
 .wrap{max-width:var(--max);margin-inline:auto}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:1.5px solid var(--ink);outline-offset:4px}
@@ -33,8 +34,8 @@ img{max-width:100%;display:block}
 .skip:focus{top:12px}
 main:focus{outline:none}
 
-.cap{font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin:0}
-.more{display:inline-flex;align-items:center;gap:30px;font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid currentColor;transition:gap .35s cubic-bezier(.2,.7,.2,1)}
+.cap{font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin:0}
+.more{display:inline-flex;align-items:center;gap:30px;font-size:11px;background:none;border:0;border-bottom:1px solid currentColor;color:inherit;font-family:inherit;cursor:pointer;padding:0 0 7px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid currentColor;transition:gap .35s cubic-bezier(.2,.7,.2,1)}
 a.more:hover{gap:40px}
 .more svg{width:17px;height:10px;flex:none}
 .name{font-weight:400;letter-spacing:-.005em;line-height:1.1;margin:0}
@@ -42,13 +43,13 @@ a.more:hover{gap:40px}
 .dates{font-size:14px;margin:0;font-variant-numeric:tabular-nums}
 
 /* logo: the gallery's own badge */
-.logo{--s:84px;width:var(--s);height:var(--s);border-radius:50%;display:block;flex:none;
+.logo{--s:118px;width:var(--s);height:var(--s);border-radius:50%;display:block;flex:none;
   background:url(img/logo.png) no-repeat;background-size:calc(var(--s)*1.7);
   background-position:calc(var(--s)*-.12) calc(var(--s)*-.357)}
 
 header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px 18px}
 nav{display:flex;gap:clamp(18px,3.4vw,52px)}
-nav a{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;min-height:44px;display:inline-flex;align-items:center;
+nav a{font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;min-height:44px;display:inline-flex;align-items:center;
   background:linear-gradient(currentColor,currentColor) 0 calc(100% - 11px)/0 1px no-repeat;transition:background-size .35s}
 nav a:hover{background-size:100% 1px}
 
@@ -56,8 +57,8 @@ nav a:hover{background-size:100% 1px}
 .ph img{width:100%;height:100%;object-fit:cover;filter:sepia(.14) saturate(.82) brightness(1.02);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
 
 /* hero: photo runs to the right edge of the window */
-.hero{display:grid;grid-template-columns:minmax(0,31fr) minmax(0,69fr);gap:clamp(24px,5vw,72px);align-items:center;padding-bottom:clamp(36px,5vw,64px)}
-.hero .ph{aspect-ratio:3/2;margin-right:calc(-1 * max(var(--g), (100vw - var(--max)) / 2))}
+.hero{display:grid;grid-template-columns:minmax(0,27fr) minmax(0,73fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(0px,2vw,28px) clamp(36px,5vw,64px)}
+.hero .ph{aspect-ratio:3/2;margin-right:calc(-1 * (var(--g) + max(0px, (100cqw - var(--max)) / 2)))}
 .hero .ph img{animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both}
 @keyframes settle{from{transform:scale(1.07);opacity:.35}to{transform:none;opacity:1}}
 .hero .name{font-size:clamp(34px,3.6vw,48px);margin-top:22px}
@@ -71,15 +72,16 @@ section{border-top:1px solid var(--line);padding-block:clamp(40px,5vw,64px)}
 .current .work{font-size:17px;margin-top:6px}
 .current .dates{margin-top:10px}
 .current .more{margin-top:clamp(28px,4vw,48px)}
-.current p.txt{margin:0;max-width:34ch;font-size:15px}
+.current p.txt{margin:0 0 14px;max-width:36ch;font-size:16px}
+.current .txt-more{margin-top:clamp(20px,3vw,36px)}
 .current .ph{aspect-ratio:4/5}
 .current .ph img{object-position:92% 50%}
 
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,26px);margin-top:22px}
-.card .ph{aspect-ratio:4/3}
+.card .ph{aspect-ratio:8/7}
 .card h3,.artist h3{font-weight:400;font-size:16px;margin:16px 0 0;line-height:1.35}
-.card .work{font-size:13.5px}
-.card .y{font-size:13px;margin:2px 0 18px;font-variant-numeric:tabular-nums}
+.card .work{font-size:14px}
+.card .y{font-size:13.5px;margin:2px 0 0;font-variant-numeric:tabular-nums}
 .card:hover .ph img,.artist:hover .ph img{transform:scale(1.04)}
 
 .artists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.6vw,36px);margin-top:22px}
@@ -88,14 +90,14 @@ section{border-top:1px solid var(--line);padding-block:clamp(40px,5vw,64px)}
 
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px)}
 .split h2{font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.2;margin:18px 0 0;text-wrap:balance;max-width:20ch}
-.split p:not(.cap){max-width:54ch;margin:0 0 14px;font-size:15px}
-.facts{display:grid;grid-template-columns:auto 1fr;gap:12px 32px;margin:4px 0 0;font-size:15px}
-.facts dt{font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.split p:not(.cap){max-width:54ch;margin:0 0 14px;font-size:16.5px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:12px 32px;margin:4px 0 0;font-size:16.5px}
+.facts dt{font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding-top:4px}
 .facts dd{margin:0}
 .tbd{color:var(--muted);font-style:italic}
 
-footer{border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr 1fr auto;gap:28px;align-items:center;padding-block:28px;font-size:12px;letter-spacing:.02em}
-footer .logo{--s:56px}
+footer{border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr 1fr auto;gap:28px;align-items:center;padding-block:18px;font-size:13px;letter-spacing:.02em}
+footer .logo{--s:52px}
 .credits{font-size:11px;color:var(--muted);line-height:1.6;padding-block:0 32px}
 .credits summary{cursor:pointer;letter-spacing:.13em;text-transform:uppercase;font-weight:500;padding-block:10px;font-size:10px}
 .credits a{text-decoration:underline;text-underline-offset:2px}
@@ -108,6 +110,7 @@ footer .logo{--s:56px}
   .hero{gap:28px}
   .hero .more{margin-top:26px}
   .hero .ph{margin-left:calc(-1 * var(--g))}
+  .hero{padding-top:0}
   .current .ph{aspect-ratio:4/3;max-width:560px}
   .grid4{grid-template-columns:1fr 1fr}
   footer{grid-template-columns:auto 1fr}
@@ -115,19 +118,19 @@ footer .logo{--s:56px}
 @media (max-width:560px){
   header{flex-direction:column;gap:6px}
   nav{gap:18px}
-  .logo{--s:76px}
+  .logo{--s:96px}
   .grid4{gap:28px 14px}
   .card h3{font-size:15px}
   .more{gap:18px}
-  .artists{grid-template-columns:1fr 1fr}
-  .artists .artist:last-child{display:none}
+  .artists{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-right:calc(-1 * var(--g));padding-right:var(--g);scrollbar-width:none}
+  .artists .artist{flex:0 0 72%;scroll-snap-align:start}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .reveal.below{transform:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#top">Přejít na obsah</a>
-<div class="wrap">
+<div class="shell"><div class="wrap">
   <header>
     <a class="logo" href="#top" aria-label="atmo gallery – úvod"></a>
     <nav aria-label="Hlavní menu">
@@ -160,6 +163,8 @@ footer .logo{--s:56px}
       </div>
       <div>
         <p class="txt">Tiché ozvěny sledují stopy paměti v tlumených barvách a drobných gestech. Marta Kolářová maluje krajinu, kterou si pamatuje, ne tu, kterou vidí. Čtrnáct pláten vzniklo za poslední dva roky v jejím ateliéru na Šumavě.</p>
+        <p class="txt" id="vystava-vice" hidden>Obrazy vznikají v mnoha vrstvách: autorka barvu nanáší, stírá a znovu překrývá, dokud z plochy nezůstane jen to podstatné. Výstavu doprovází komentovaná prohlídka s autorkou (termín doplníme).</p>
+        <button class="more txt-more" type="button" aria-expanded="false" aria-controls="vystava-vice">O výstavě <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></button>
       </div>
       <div class="ph reveal"><img src="img/vystava-960.jpg" srcset="img/vystava-960.jpg 960w, img/vystava-1600.jpg 1600w" sizes="(max-width:900px) 100vw, 26vw" alt="Obraz s motivem květin na bílé stěně galerie" width="960" height="672" loading="lazy" decoding="async"></div>
     </section>
@@ -167,10 +172,10 @@ footer .logo{--s:56px}
     <section aria-labelledby="past-h">
       <h2 class="cap" id="past-h">Proběhlé výstavy</h2>
       <div class="grid4">
-        <article class="card reveal"><div class="ph"><img src="img/minula1-960.jpg" alt="Fotografie na bílých stěnách galerie" width="960" height="640" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p class="work">Světlo na zdi</p><p class="y">2026</p><span class="more">Výstava <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></span></article>
-        <article class="card reveal"><div class="ph"><img src="img/studio-960.jpg" alt="Malířka při práci v ateliéru" width="960" height="604" loading="lazy" decoding="async"></div><h3>Návštěva ateliéru</h3><p class="work">Marta Kolářová</p><p class="y">2025</p><span class="more">Výstava <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></span></article>
-        <article class="card reveal"><div class="ph"><img src="img/papir-1024.jpg" alt="Návštěvníci u stolů s kresbami" width="1024" height="683" loading="lazy" decoding="async"></div><h3>Práce na papíře</h3><p class="work">kolektivní výstava</p><p class="y">2025</p><span class="more">Výstava <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></span></article>
-        <article class="card reveal"><div class="ph"><img src="img/textura-1024.jpg" alt="Detail vrstvené, poškrábané malby" width="1024" height="680" loading="lazy" decoding="async"></div><h3>Textura a paměť</h3><p class="work">Eva Šímová</p><p class="y">2024</p><span class="more">Výstava <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></span></article>
+        <article class="card reveal"><div class="ph"><img src="img/minula1-960.jpg" alt="Fotografie na bílých stěnách galerie" width="960" height="640" loading="lazy" decoding="async"></div><h3>Jan Brož</h3><p class="work">Světlo na zdi</p><p class="y">2026</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/studio-960.jpg" alt="Malířka při práci v ateliéru" width="960" height="604" loading="lazy" decoding="async"></div><h3>Návštěva ateliéru</h3><p class="work">Marta Kolářová</p><p class="y">2025</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/papir-640.jpg" srcset="img/papir-640.jpg 640w, img/papir-1024.jpg 1024w" sizes="(max-width:900px) 50vw, 300px" alt="Návštěvníci u stolů s kresbami" width="1024" height="683" loading="lazy" decoding="async"></div><h3>Práce na papíře</h3><p class="work">kolektivní výstava</p><p class="y">2025</p></article>
+        <article class="card reveal"><div class="ph"><img src="img/textura-640.jpg" srcset="img/textura-640.jpg 640w, img/textura-1024.jpg 1024w" sizes="(max-width:900px) 50vw, 300px" alt="Detail vrstvené, poškrábané malby" width="1024" height="680" loading="lazy" decoding="async"></div><h3>Textura a paměť</h3><p class="work">Eva Šímová</p><p class="y">2024</p></article>
       </div>
     </section>
 
@@ -226,8 +231,9 @@ footer .logo{--s:56px}
 <a href="https://www.flickr.com/photos/26499572@N08/6285173458">Scratchy Vintage Paint texture.</a> – Mary Vican, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a><br>
 <a href="https://www.flickr.com/photos/21283177@N00/1023609988">Gallery visitors</a> – mrdannynavarro, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></p>
   </details>
-</div>
+</div></div>
 <script>
+document.querySelectorAll('button[aria-controls]').forEach(b=>b.addEventListener('click',()=>{const t=document.getElementById(b.getAttribute('aria-controls'));const open=t.hidden;t.hidden=!open;b.setAttribute('aria-expanded',String(open));b.firstChild.textContent=open?'Méně ':'O výstavě ';}));
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
   document.documentElement.classList.add('js');
