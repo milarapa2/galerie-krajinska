@@ -44,8 +44,7 @@ a.more:hover{gap:40px}
 
 /* logo: the gallery's own badge */
 .logo{--s:118px;width:var(--s);height:var(--s);border-radius:50%;display:block;flex:none;
-  background:url(img/logo.png) no-repeat;background-size:calc(var(--s)*1.7);
-  background-position:calc(var(--s)*-.12) calc(var(--s)*-.357)}
+  background:url(img/logo.png) center/100% no-repeat}
 
 header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px 18px}
 nav{display:flex;flex-wrap:wrap;justify-content:flex-end;column-gap:clamp(14px,3.4vw,52px)}
@@ -144,6 +143,17 @@ footer .logo{--s:52px}
 .credits{font-size:12.5px;color:var(--muted);margin:0 0 28px}
 @media (max-width:900px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}.work-item:last-child{grid-column:1/-1}.work-item:last-child .ph{aspect-ratio:3/2}.space{grid-template-columns:1fr}}
 @media (max-width:560px){.studio{grid-template-columns:1fr}}
+
+.hero{grid-template-columns:minmax(0,45fr) minmax(0,55fr)!important}
+.hero .ph{aspect-ratio:4/5!important;margin-right:0!important}
+.hero .ph img{object-position:50% 60%}
+.qs .questions{max-width:820px}
+.qs .qtxt{max-width:52ch;margin:26px 0 0;font-size:17px}
+.space .ph{aspect-ratio:3/2!important}
+.space .more{margin-top:28px}
+.studio{margin-top:clamp(16px,2.6vw,36px)!important}
+#kontakt h2{font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.2;margin:0}
+@media (max-width:900px){.hero{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -152,37 +162,22 @@ footer .logo{--s:52px}
   <header>
     <a class="logo" href="#top" aria-label="atmo gallery – úvod"></a>
     <nav aria-label="Hlavní menu">
-      <a href="#tvorba">Tvorba</a>
-      <a href="#otazky">Otázky</a>
-      <a href="#o-nas">Prostor</a>
-      <a href="#navsteva">Návštěva</a>
+      <a href="#o-galerii">O galerii</a>
+      <a href="#umelci">Umělci</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
   <main id="top" tabindex="-1">
-    <div class="hero">
+    <div class="hero" id="o-galerii">
       <div>
-        <p class="cap">atmo gallery</p>
         <h1 class="claim">Umění jako součást každodennosti.</h1>
         <p class="lead">atmo gallery přibližuje současné umění lidem, kteří s ním chtějí žít. Představujeme mladé české umělce a propojujeme jejich tvorbu s lidmi i prostory, které mohou proměnit.</p>
-        <a class="more" href="#tvorba">Prohlédnout tvorbu <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></a>
       </div>
-      <div class="ph"><img src="img/atmo/a4-800.jpg" srcset="img/atmo/a4-800.jpg 800w, img/atmo/a4-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 70vw" alt="Návštěvnice před velkou dvojdílnou malbou" width="1400" height="934" fetchpriority="high" decoding="async"></div>
+      <div class="ph"><img src="img/atmo/a1-800.jpg" srcset="img/atmo/a1-800.jpg 800w, img/atmo/a1-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 55vw" alt="Malby v obytném interiéru s knihovnou a květinami" width="800" height="1200" fetchpriority="high" decoding="async"></div>
     </div>
 
-    <section id="tvorba" aria-labelledby="works-h">
-      <h2 class="cap" id="works-h">Výběr z tvorby</h2>
-      <div class="works">
-        <figure class="work-item reveal"><div class="ph"><img src="img/atmo/a7-800.jpg" srcset="img/atmo/a7-800.jpg 800w, img/atmo/a7-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a52-800.jpg" srcset="img/atmo/a52-800.jpg 800w, img/atmo/a52-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v broskvových a oranžových tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a9-800.jpg" srcset="img/atmo/a9-800.jpg 800w, img/atmo/a9-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Světlá vrstvená malba v béžových a šedých tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a28-800.jpg" srcset="img/atmo/a28-800.jpg 800w, img/atmo/a28-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Detail malby v šedých tónech se žlutými tahy" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a22-800.jpg" srcset="img/atmo/a22-800.jpg 800w, img/atmo/a22-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Dvojdílná světlá malba na bílé stěně" width="800" height="1200" loading="lazy" decoding="async"></div></figure>
-      </div>
-    </section>
-
-    <section id="otazky" class="split" aria-labelledby="q-h">
-      <div>
-        <p class="cap">Otázky</p>
-        <h2 id="q-h">Nemusíte znát odpovědi, stačí se ptát.</h2>
-        <p class="qtxt">Současné umění bývá opředeno řadou otázek a předsudků. Pojďme je společně rozebrat.</p>
-      </div>
+    <section class="qs" aria-label="Otázky o současném umění">
       <ul class="questions">
         <li>Musím umění rozumět?</li>
         <li>Kolik stojí současné umění?</li>
@@ -190,35 +185,34 @@ footer .logo{--s:52px}
         <li>Kdo vlastně určuje, co je dobré?</li>
         <li>Jak si dílo pořídím?</li>
       </ul>
+      <p class="qtxt">Současné umění bývá opředeno řadou otázek a předsudků. Pojďme je společně rozebrat. Nemusíte znát odpovědi, stačí se ptát.</p>
     </section>
 
-    <section id="o-nas" class="space" aria-labelledby="space-h">
-      <div class="ph reveal"><img src="img/atmo/a1-800.jpg" srcset="img/atmo/a1-800.jpg 800w, img/atmo/a1-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 45vw" alt="Malby v obytném interiéru s knihovnou a květinami" width="800" height="1200" loading="lazy" decoding="async"></div>
+    <section class="space" aria-label="Umění v prostoru">
+      <div class="ph reveal"><img src="img/atmo/a4-800.jpg" srcset="img/atmo/a4-800.jpg 800w, img/atmo/a4-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 50vw" alt="Návštěvnice před velkou dvojdílnou malbou" width="1400" height="934" loading="lazy" decoding="async"></div>
       <div>
-        <p class="cap">Umění v prostoru</p>
-        <h2 id="space-h">Něco skutečného kolem sebe</h2>
-        <p>V digitálním světě je příjemné mít kolem sebe něco skutečného. Umění přináší emoci, radost a navíc dokáže pozvednout prostor, ve kterém každý den žijeme.</p>
+        <p><strong>V digitálním světě je příjemné mít kolem sebe něco skutečného.</strong> Umění přináší emoci, radost a navíc dokáže pozvednout prostor, ve kterém každý den žijeme.</p>
+        <a class="more" href="#umelci">Prohlédnout díla <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></a>
       </div>
     </section>
 
-    <section id="atelier" aria-labelledby="studio-h">
-      <h2 class="cap" id="studio-h">Z ateliéru</h2>
+    <section id="umelci" aria-label="Díla a ateliér">
+      <div class="works">
+        <figure class="work-item reveal"><div class="ph"><img src="img/atmo/a7-800.jpg" srcset="img/atmo/a7-800.jpg 800w, img/atmo/a7-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a52-800.jpg" srcset="img/atmo/a52-800.jpg 800w, img/atmo/a52-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v broskvových a oranžových tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a9-800.jpg" srcset="img/atmo/a9-800.jpg 800w, img/atmo/a9-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Světlá vrstvená malba v béžových a šedých tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a28-800.jpg" srcset="img/atmo/a28-800.jpg 800w, img/atmo/a28-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Detail malby v šedých tónech se žlutými tahy" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a22-800.jpg" srcset="img/atmo/a22-800.jpg 800w, img/atmo/a22-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Dvojdílná světlá malba na bílé stěně" width="800" height="1200" loading="lazy" decoding="async"></div></figure>
+      </div>
       <div class="studio">
-        <div class="ph reveal"><img src="img/atmo/a18-800.jpg" srcset="img/atmo/a18-800.jpg 800w, img/atmo/a18-1400.jpg 1400w" sizes="(max-width:700px) 100vw, 50vw" alt="Žena sedící v ateliéru mezi obrazy" width="800" height="1200" loading="lazy" decoding="async"></div>
-        <div class="ph reveal"><img src="img/atmo/a19-800.jpg" srcset="img/atmo/a19-800.jpg 800w, img/atmo/a19-1400.jpg 1400w" sizes="(max-width:700px) 100vw, 50vw" alt="Malby na papíře rovnané na podlaze ateliéru" width="800" height="1200" loading="lazy" decoding="async"></div>
+        <div class="ph reveal"><img src="img/atmo/a18-800.jpg" srcset="img/atmo/a18-800.jpg 800w, img/atmo/a18-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Žena sedící v ateliéru mezi obrazy" width="800" height="1200" loading="lazy" decoding="async"></div>
+        <div class="ph reveal"><img src="img/atmo/a19-800.jpg" srcset="img/atmo/a19-800.jpg 800w, img/atmo/a19-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Malby na papíře rovnané na podlaze ateliéru" width="800" height="1200" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <section id="navsteva" class="split" aria-labelledby="visit-h">
+    <section id="kontakt" class="split" aria-labelledby="visit-h">
       <div>
-        <p class="cap">Návštěva</p>
-        <h2 id="visit-h">Pár kroků od náměstí Přemysla Otakara II.</h2>
+        <h2 id="visit-h">Domluvte si návštěvu.</h2>
       </div>
       <dl class="facts">
         <dt>Adresa</dt><dd>Krajinská<br>370 01 České Budějovice</dd>
-        <dt>Otevřeno</dt><dd class="tbd">doplníme</dd>
         <dt>Kontakt</dt><dd class="tbd">doplníme</dd>
-        <dt>Vstup</dt><dd class="tbd">doplníme</dd>
       </dl>
     </section>
   </main>
