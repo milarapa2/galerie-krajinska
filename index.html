@@ -174,6 +174,17 @@ footer .logo{--s:52px}
 .bio-txt p{max-width:60ch;margin:0 0 14px;font-size:16.5px}
 a.ul{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 @media (max-width:900px){.qs,.bio{grid-template-columns:1fr}.qs .ph,.bio .ph{aspect-ratio:4/5;max-width:560px}}
+.zoom{display:block;width:100%;padding:0;border:0;cursor:zoom-in;font:inherit;color:inherit}
+.zoom:hover img{transform:scale(1.04)}
+.lb{border:0;padding:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:rgba(20,22,40,.94);color:#fff}
+.lb::backdrop{background:rgba(20,22,40,.94)}
+.lb[open]{display:flex;align-items:center;justify-content:center}
+.lb img{max-width:calc(100vw - 120px);max-height:calc(100dvh - 48px);width:auto;height:auto;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;width:56px;height:56px;display:grid;place-items:center;font:300 34px/1 var(--sans)}
+.lb button:focus-visible{outline:1.5px solid #fff;outline-offset:-6px}
+.lb .x{top:calc(8px + env(safe-area-inset-top,0px));right:8px}
+.lb .pv{left:4px;top:50%;transform:translateY(-50%)}.lb .nx{right:4px;top:50%;transform:translateY(-50%)}
+@media (max-width:560px){.lb img{max-width:100vw;max-height:calc(100dvh - 120px)}.lb .pv,.lb .nx{top:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:none}}
 </style>
 </head>
 <body>
@@ -221,7 +232,7 @@ a.ul{text-decoration:underline;text-underline-offset:3px;text-decoration-thickne
 
     <section id="dila" aria-label="Díla a ateliér">
       <div class="works">
-        <figure class="work-item reveal"><div class="ph"><img src="img/atmo/a7-800.jpg" srcset="img/atmo/a7-800.jpg 800w, img/atmo/a7-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a52-800.jpg" srcset="img/atmo/a52-800.jpg 800w, img/atmo/a52-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v broskvových a oranžových tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a9-800.jpg" srcset="img/atmo/a9-800.jpg 800w, img/atmo/a9-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Světlá vrstvená malba v béžových a šedých tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a28-800.jpg" srcset="img/atmo/a28-800.jpg 800w, img/atmo/a28-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Detail malby v šedých tónech se žlutými tahy" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a22-800.jpg" srcset="img/atmo/a22-800.jpg 800w, img/atmo/a22-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Dvojdílná světlá malba na bílé stěně" width="800" height="1200" loading="lazy" decoding="async"></div></figure>
+        <figure class="work-item reveal"><button type="button" class="ph zoom" data-full="img/atmo/a7-1400.jpg" aria-label="Zvětšit: Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi"><img src="img/atmo/a7-800.jpg" srcset="img/atmo/a7-800.jpg 800w, img/atmo/a7-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi" width="800" height="1200" loading="lazy" decoding="async"></button></figure><figure class="work-item reveal"><button type="button" class="ph zoom" data-full="img/atmo/a52-1400.jpg" aria-label="Zvětšit: Abstraktní malba v broskvových a oranžových tónech"><img src="img/atmo/a52-800.jpg" srcset="img/atmo/a52-800.jpg 800w, img/atmo/a52-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v broskvových a oranžových tónech" width="800" height="1200" loading="lazy" decoding="async"></button></figure><figure class="work-item reveal"><button type="button" class="ph zoom" data-full="img/atmo/a9-1400.jpg" aria-label="Zvětšit: Světlá vrstvená malba v béžových a šedých tónech"><img src="img/atmo/a9-800.jpg" srcset="img/atmo/a9-800.jpg 800w, img/atmo/a9-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Světlá vrstvená malba v béžových a šedých tónech" width="800" height="1200" loading="lazy" decoding="async"></button></figure><figure class="work-item reveal"><button type="button" class="ph zoom" data-full="img/atmo/a28-1400.jpg" aria-label="Zvětšit: Detail malby v šedých tónech se žlutými tahy"><img src="img/atmo/a28-800.jpg" srcset="img/atmo/a28-800.jpg 800w, img/atmo/a28-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Detail malby v šedých tónech se žlutými tahy" width="800" height="1200" loading="lazy" decoding="async"></button></figure><figure class="work-item reveal"><button type="button" class="ph zoom" data-full="img/atmo/a22-1400.jpg" aria-label="Zvětšit: Dvojdílná světlá malba na bílé stěně"><img src="img/atmo/a22-800.jpg" srcset="img/atmo/a22-800.jpg 800w, img/atmo/a22-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Dvojdílná světlá malba na bílé stěně" width="800" height="1200" loading="lazy" decoding="async"></button></figure>
       </div>
       <div class="studio">
         <div class="ph reveal"><img src="img/atmo/a20-800.jpg" srcset="img/atmo/a20-800.jpg 800w, img/atmo/a20-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Krabice s pastelovými křídami a miska s uhly na pracovním stole" width="800" height="1199" loading="lazy" decoding="async"></div>
@@ -285,6 +296,27 @@ document.querySelectorAll('button[aria-controls]').forEach(b=>b.addEventListener
   document.documentElement.classList.add('js');
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('below');io.unobserve(e.target);}}),{rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach((el,i)=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('below');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);}});
+})();
+</script>
+<dialog class="lb" id="lb" aria-label="Zvětšené dílo">
+  <img alt="">
+  <button type="button" class="pv" aria-label="Předchozí dílo">‹</button>
+  <button type="button" class="nx" aria-label="Další dílo">›</button>
+  <button type="button" class="x" aria-label="Zavřít">×</button>
+</dialog>
+<script>
+(function(){
+  const lb=document.getElementById('lb'),im=lb.querySelector('img'),items=[...document.querySelectorAll('.zoom')];let i=0;
+  if(!lb.showModal)return;
+  function show(k){i=(k+items.length)%items.length;const b=items[i];im.src=b.dataset.full;im.alt=b.querySelector('img').alt;}
+  items.forEach((b,k)=>b.addEventListener('click',()=>{show(k);lb.showModal();}));
+  lb.querySelector('.pv').onclick=e=>{e.stopPropagation();show(i-1)};
+  lb.querySelector('.nx').onclick=e=>{e.stopPropagation();show(i+1)};
+  lb.querySelector('.x').onclick=()=>lb.close();
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target===im)lb.close();});
+  lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);});
+  let x0=null;lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(d<0?i+1:i-1);x0=null;});
 })();
 </script>
 </body>
