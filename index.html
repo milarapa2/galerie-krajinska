@@ -164,6 +164,16 @@ footer .logo{--s:52px}
 .banner-txt{position:absolute;left:clamp(20px,5vw,72px);right:clamp(20px,5vw,72px);bottom:clamp(20px,4vw,56px);font-size:clamp(22px,3vw,40px);line-height:1.2;color:var(--ink);max-width:24ch;text-wrap:balance}
 .banner-txt strong{display:block;font-weight:600}
 @media (max-width:560px){.banner{aspect-ratio:4/5}}
+.qs{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr);gap:clamp(24px,5vw,80px);align-items:center}
+.qs .ph{aspect-ratio:2/3}
+.sec-h{font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.2;margin:0}
+.bios{display:grid;gap:clamp(40px,5vw,72px);margin-top:clamp(24px,3vw,40px)}
+.bio{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr);gap:clamp(24px,5vw,80px);align-items:start}
+.bio .ph{aspect-ratio:4/5}
+.bio h3{font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.25;margin:0 0 16px}
+.bio-txt p{max-width:60ch;margin:0 0 14px;font-size:16.5px}
+a.ul{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+@media (max-width:900px){.qs,.bio{grid-template-columns:1fr}.qs .ph,.bio .ph{aspect-ratio:4/5;max-width:560px}}
 </style>
 </head>
 <body>
@@ -188,6 +198,8 @@ footer .logo{--s:52px}
     </div>
 
     <section class="qs" aria-label="Otázky o současném umění">
+      <div class="ph reveal"><img src="img/atmo/a25-800.jpg" srcset="img/atmo/a25-800.jpg 800w, img/atmo/a25-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 40vw" alt="Detail abstraktní malby ve světlých šedorůžových tónech" width="800" height="1200" loading="lazy" decoding="async"></div>
+      <div>
       <ul class="questions">
         <li>Musím umění rozumět?</li>
         <li>Kolik stojí současné umění?</li>
@@ -196,46 +208,72 @@ footer .logo{--s:52px}
         <li>Jak si dílo pořídím?</li>
       </ul>
       <p class="qtxt">Současné umění bývá opředeno řadou otázek a předsudků. Pojďme je společně rozebrat. Nemusíte znát odpovědi, stačí se ptát.</p>
+      </div>
     </section>
 
     <section class="space" aria-label="Umění v prostoru">
       <div class="ph reveal"><img src="img/atmo/a4-800.jpg" srcset="img/atmo/a4-800.jpg 800w, img/atmo/a4-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 50vw" alt="Návštěvnice před velkou dvojdílnou malbou" width="1400" height="934" loading="lazy" decoding="async"></div>
       <div>
         <p><strong>V digitálním světě je příjemné mít kolem sebe něco skutečného.</strong> Umění přináší emoci, radost a navíc dokáže pozvednout prostor, ve kterém každý den žijeme.</p>
-        <a class="more" href="#umelci">Prohlédnout díla <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></a>
+        <a class="more" href="#dila">Prohlédnout díla <svg viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16.5M12.5 1.5 16.5 5l-4 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></a>
       </div>
     </section>
 
-    <section id="umelci" aria-label="Díla a ateliér">
+    <section id="dila" aria-label="Díla a ateliér">
       <div class="works">
         <figure class="work-item reveal"><div class="ph"><img src="img/atmo/a7-800.jpg" srcset="img/atmo/a7-800.jpg 800w, img/atmo/a7-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v růžových a červených tónech s bílými krouživými liniemi" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a52-800.jpg" srcset="img/atmo/a52-800.jpg 800w, img/atmo/a52-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Abstraktní malba v broskvových a oranžových tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a9-800.jpg" srcset="img/atmo/a9-800.jpg 800w, img/atmo/a9-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Světlá vrstvená malba v béžových a šedých tónech" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a28-800.jpg" srcset="img/atmo/a28-800.jpg 800w, img/atmo/a28-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Detail malby v šedých tónech se žlutými tahy" width="800" height="1200" loading="lazy" decoding="async"></div></figure><figure class="work-item reveal"><div class="ph"><img src="img/atmo/a22-800.jpg" srcset="img/atmo/a22-800.jpg 800w, img/atmo/a22-1400.jpg 1400w" sizes="(max-width:900px) 50vw, 20vw" alt="Dvojdílná světlá malba na bílé stěně" width="800" height="1200" loading="lazy" decoding="async"></div></figure>
       </div>
       <div class="studio">
-        <div class="ph reveal"><img src="img/atmo/a18-800.jpg" srcset="img/atmo/a18-800.jpg 800w, img/atmo/a18-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Žena sedící v ateliéru mezi obrazy" width="800" height="1200" loading="lazy" decoding="async"></div>
+        <div class="ph reveal"><img src="img/atmo/a20-800.jpg" srcset="img/atmo/a20-800.jpg 800w, img/atmo/a20-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Krabice s pastelovými křídami a miska s uhly na pracovním stole" width="800" height="1199" loading="lazy" decoding="async"></div>
         <div class="ph reveal"><img src="img/atmo/a19-800.jpg" srcset="img/atmo/a19-800.jpg 800w, img/atmo/a19-1400.jpg 1400w" sizes="(max-width:560px) 100vw, 50vw" alt="Malby na papíře rovnané na podlaze ateliéru" width="800" height="1200" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
-    <a class="banner reveal" href="#umelci">
+    <a class="banner reveal" href="#dila">
       <img src="img/atmo/banner-800.jpg" srcset="img/atmo/banner-800.jpg 800w, img/atmo/banner-1600.jpg 1600w" sizes="100vw" alt="" width="1600" height="600" loading="lazy" decoding="async">
       <span class="banner-txt"><strong>Objevte současné umění.</strong> Vyberte si dílo, které s vámi zůstane.</span>
     </a>
+
+    <section id="umelci" aria-labelledby="umelci-h">
+      <h2 id="umelci-h" class="sec-h">Umělci</h2>
+      <div class="bios">
+        <article class="bio">
+          <div class="ph reveal"><img src="img/atmo/a18-800.jpg" srcset="img/atmo/a18-800.jpg 800w, img/atmo/a18-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 40vw" alt="Kateřina Dobroslava Drahošová v ateliéru mezi svými obrazy" width="800" height="1200" loading="lazy" decoding="async"></div>
+          <div class="bio-txt">
+            <h3>Kateřina Dobroslava Drahošová</h3>
+            <p>Kateřina Dobroslava Drahošová pochází z malé vesnice na Šumavě. Tento specifický ráz krajiny, ve které prožila celé dětství a dospívání, se přirozeně odráží i v její tvorbě.</p>
+            <p>V současnosti žije a tvoří střídavě v Českých Budějovicích a na Šumavě. Vystudovala malbu na Fakultě umění v Ostravě v ateliéru I u profesora Ak.mal. Daniela Balabána.</p>
+            <p>Během studia odjela na studijní stáž do Belgie a Finska, kde ji ovlivnil život na biodynamických farmách.</p>
+            <p>Její tvorba je citlivým záznamem každodenních maličkostí. Hlavním uměleckým nástrojem Kateřiny je kresba a její přesahy. Charakteristickým rukopisem je jemná linie, struktura i „progumovaná“ plocha. Její kresby jsou však plné pohybu, dynamické vibrující energie, která se střetává v kontrastu s klidem a harmonií. Zajímá ji kresba v nejjednodušší podobě. Linka - někdy jemná, jindy hrubá - je výchozím a zásadním bodem její tvorby.</p>
+            <p>Linie, která může projovat, dělit, vést nebo odhalit; linii, která nevyžaduje lineární ani chronologické pořadí. Důležitý je pro ni vztah k přírodě.</p>
+            <p>Jak sama říká „usušené kořeny Šumavy nosím neustále s sebou.“</p>
+          </div>
+        </article>
+        <article class="bio">
+          <div class="ph reveal"><img src="img/atmo/a4-800.jpg" srcset="img/atmo/a4-800.jpg 800w, img/atmo/a4-1400.jpg 1400w" sizes="(max-width:900px) 100vw, 40vw" alt="Postava v pohybu před velkou dvojdílnou malbou" width="1400" height="934" loading="lazy" decoding="async"></div>
+          <div class="bio-txt">
+            <h3>Anna Vopátková</h3>
+            <p>Anna Vopátková studovala na Akademii múzických umění, kde absolvovala v ateliéru Markéty Kinterové. Momentálně se převážně věnuje abstraktní malbě, kde se snaží odrážet mnohovrstevnatou existenci lidského bytí. Struktury, vrstvy, destrukce, časosběr, emoce, ambivalence – to vše lze najít v její tvorbě. Skrze kombinaci těchto prvků Anna vytváří nejen obrazy, ale také ráda experimentuje napříč různými médii.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section id="kontakt" class="split" aria-labelledby="visit-h">
       <div>
         <h2 id="visit-h">Domluvte si návštěvu.</h2>
       </div>
       <dl class="facts">
-        <dt>Adresa</dt><dd>Krajinská<br>370 01 České Budějovice</dd>
-        <dt>Kontakt</dt><dd class="tbd">doplníme</dd>
+        <dt>Adresa</dt><dd><a class="ul" href="https://www.google.com/maps/search/?api=1&amp;query=Krajinsk%C3%A1+230%2F31%2C+370+01+%C4%8Cesk%C3%A9+Bud%C4%9Bjovice" target="_blank" rel="noopener">Krajinská 230/31<br>370 01 České Budějovice</a></dd>
+        <dt>E-mail</dt><dd><a class="ul" href="mailto:tereza@atmogallery.cz">tereza@atmogallery.cz</a></dd>
       </dl>
     </section>
   </main>
 
   <footer>
     <a class="logo" href="#top" aria-label="Nahoru"></a>
-    <span>atmo gallery · Krajinská, České Budějovice</span>
-    <span class="tbd">e-mail doplníme</span>
+    <span>atmo gallery · Krajinská 230/31, České Budějovice</span>
+    <a href="mailto:tereza@atmogallery.cz">tereza@atmogallery.cz</a>
     <span>© 2026 atmo gallery</span>
   </footer>
   
